@@ -29,10 +29,10 @@ public class ListaProduto {
 		int quantidade = 0;
 		int quantidadeM = 0;
 		List<Produto> lista = new ArrayList<>();
+		String[] nomes = new String[lista.size()];
 		Produto prod = new Produto();
 		Scanner num = new Scanner(System.in);
 		int resp = num.nextInt();
-		
 		do {
 			switch (resp) {
 			case 1:
@@ -46,9 +46,8 @@ public class ListaProduto {
 				prod.setQuantidadeAtual(num.nextInt());
 				System.out.print("Insira a quantidade minima: ");
 				prod.setQuantidadeMinima(num.nextInt());
-
+				
 				lista.add(0, prod);
-				resp = 0;
 				break;
 			case 2:
 				System.out.print("Insira o codigo do produto: ");
@@ -76,15 +75,17 @@ public class ListaProduto {
 				break;
 			case 5:
 				for (Produto x : lista) {
-					System.out.println(x.getNomeProduto());
+					System.out.println(x);
 				}
 				break;
 			case 6:
-				System.out.print("A quantidade de produtos atual é: " + lista.size());
+				System.out.println("A quantidade de produtos atual é: " + lista.size());
 				break;
 			}
+			menu();
+			resp = num.nextInt();
 		} while (resp != 7);
 		System.exit(0);
+		num.close();
 	}
-
 }
