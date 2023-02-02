@@ -1,7 +1,5 @@
 package entidades;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Produto {
 	private Integer codigo;
@@ -9,8 +7,6 @@ public class Produto {
 	private Float valorProduto;
 	private Integer quantidadeAtual;
 	private Integer quantidadeMinima;
-
-	List<Produto> lista = new ArrayList<>();
 
 	public Produto() {
 
@@ -66,4 +62,9 @@ public class Produto {
 		this.quantidadeMinima = quantidadeMinima;
 	}
 
+	@Override
+	public String toString() {
+		return nomeProduto;
+	}
+	
 }
